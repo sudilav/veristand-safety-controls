@@ -29,7 +29,7 @@ namespace NationalInstruments.VeriStand.CustomControls
         public string Target =>
             "<pf:MergeScript xmlns:pf=\"http://www.ni.com/PlatformFramework\">" +
                 "<pf:MergeItem>" +
-                    "<UIWatchdog xmlns=\"http://www.your-company.com/VeriStandExample\" Width=\"[float]52\" Height=\"[float]52\"/>" +
+                    "<UIWatchdog xmlns=\"http://www.edward-jones.co.uk/VeriStandExample\" Width=\"[float]52\" Height=\"[float]52\"/>" +
                 "</pf:MergeItem>" +
             "</pf:MergeScript>";
 

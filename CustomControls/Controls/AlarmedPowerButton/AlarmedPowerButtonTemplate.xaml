@@ -7,13 +7,13 @@
                     xmlns:core="clr-namespace:NationalInstruments.Core;assembly=NationalInstruments.Core"
                     xmlns:niControls="clr-namespace:NationalInstruments.Controls;assembly=NationalInstruments.Controls"
                     xmlns:niConvertersControls="clr-namespace:NationalInstruments.Controls.Converters;assembly=NationalInstruments.Controls"
-                    xmlns:SafetyCustomControls="clr-namespace:NationalInstruments.VeriStand.CustomControls">
+                    xmlns:CustomControls="clr-namespace:NationalInstruments.VeriStand.CustomControls">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/NationalInstruments.Controls.SkinProviders.Booleans;component/ThemeColorDefault.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <niConvertersControls:ColorTableColorResolverConverter x:Key="ColorTableConverter" />
     <niConvertersControls:DynamicColorTableColorResolverConverter x:Key="DynamicColorTableConverter" />
-    <Style x:Key="{x:Type SafetyCustomControls:AlarmedPowerButton}" TargetType="{x:Type SafetyCustomControls:AlarmedPowerButton}">
+    <Style x:Key="{x:Type CustomControls:AlarmedPowerButton}" TargetType="{x:Type CustomControls:AlarmedPowerButton}">
         <Setter Property="FrameworkElement.MinWidth" Value="10" />
         <Setter Property="FrameworkElement.MinHeight" Value="10" />
         <Setter Property="FrameworkElement.UseLayoutRounding" Value="False" />
@@ -31,7 +31,7 @@
         </Setter>
         <Setter Property="coreControls:InteractiveTemplateBehavior.InteractiveTemplate">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type SafetyCustomControls:AlarmedPowerButton}">
+                <ControlTemplate TargetType="{x:Type CustomControls:AlarmedPowerButton}">
                     <coreControls:GuidelinePanel coreControls:GuidelineCollection.HorizontalGuidelines="{Binding Path=(coreControls:GuidelineCollection.HorizontalGuidelines), RelativeSource={RelativeSource TemplatedParent}}" coreControls:GuidelineCollection.VerticalGuidelines="{Binding Path=(coreControls:GuidelineCollection.VerticalGuidelines), RelativeSource={RelativeSource TemplatedParent}}">
                         <core:NineGrid Name="Background" UseFastRectangleHitTest="False" DataSource="{Binding Path=(niControls:CommonRenderProperties.BackgroundImage), RelativeSource={RelativeSource TemplatedParent}}" coreControls:GuidelinePanel.LayoutSource="{Binding Path=(niControls:CommonRenderProperties.BackgroundImage), RelativeSource={RelativeSource TemplatedParent}}" />
                         <core:NineGrid Name="PART_TrueElement" coreControls:GuidelinePanel.LayoutSource="{TemplateBinding niBooleans:BooleanRenderProperties.TrueImage}" Visibility="Collapsed" UseFastRectangleHitTest="False" DataSource="{Binding Path=(niBooleans:BooleanRenderProperties.TrueImage), RelativeSource={RelativeSource TemplatedParent}}" />

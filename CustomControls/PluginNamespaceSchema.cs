@@ -16,7 +16,7 @@ namespace NationalInstruments.VeriStand.CustomControls
         /// <summary>
         /// This must be unique among all plugins.
         /// </summary>
-        public const string ParsableNamespaceName = "http://www.edward-jones.co.uk/";
+        public const string ParsableNamespaceName = "http://www.edward-jones.co.uk/VeriStandExample";
 
         /// <summary>
         /// The current version

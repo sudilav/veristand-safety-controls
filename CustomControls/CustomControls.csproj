@@ -168,13 +168,16 @@
     <Page Include="Themes\generic.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SafetyPreferencePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\Watchdog\WatchdogControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SupportingClasses\CustomChannelValueChangedEventArgs.cs" />
     <Compile Include="SupportingClasses\AddrTextBoxFactory.cs" />
     <Compile Include="Controls\AlarmedPowerButton\AlarmedPowerButton.cs" />
     <Compile Include="Controls\AlarmedPowerButton\AlarmedPowerButtonModel.cs" />
@@ -188,10 +191,14 @@
     <Compile Include="Controls\ResetAlarms\ResetAlarms.cs" />
     <Compile Include="Controls\ResetAlarms\ResetAlarmsModel.cs" />
     <Compile Include="Controls\ResetAlarms\ResetAlarmsViewModel.cs" />
+    <Compile Include="CustomApplicationFeatureSet.cs" />
+    <Compile Include="CustomChannelValueChangedEventArgs.cs" />
     <Compile Include="CustomControlViewModelProvider.cs" />
     <Compile Include="SupportingClasses\GatewayAlarmCommands.cs" />
     <Compile Include="SupportingClasses\GatewayModel.cs" />
     <Compile Include="SupportingClasses\HostnameValidator.cs" />
+    <Compile Include="SafetyPreferencePage.xaml.cs" />
+    <Compile Include="PluginCommandContentProvider.cs" />
     <Compile Include="PluginNamespaceSchema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
