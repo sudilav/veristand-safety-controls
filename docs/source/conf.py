@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'MARTe2 Python'
+project = 'VeriStand Editor Safety Plugin'
 copyright = '2024, Edward Jones'
 author = 'Edward Jones'
 release = '1.0.0'
@@ -44,16 +44,7 @@ html_static_path = ['_static']
 
 # These paths are either relative to html_static_path
 # or fully qualified paths (eg. https://...)
-html_css_files = [
-    'css/fix_identifiers.css',
-]
+html_css_files = []
 
 html_js_files = [
 ]
-
-# -- Breathe Configuration ---------------------------------------------------
-breathe_default_project = "MARTe2-Python"
-
-import os
-import sys
-sys.path.insert(0, os.path.dirname(os.path.abspath('..')))

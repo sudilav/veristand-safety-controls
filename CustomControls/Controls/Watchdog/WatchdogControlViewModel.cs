@@ -17,6 +17,8 @@ using NationalInstruments.VeriStand.Tools;
 using System.Windows;
 using System.Windows.Media;
 using NationalInstruments.PanelCommon.Design;
+using NationalInstruments.DataTypes;
+using NationalInstruments.Controls.SourceModel;
 
 namespace NationalInstruments.VeriStand.CustomControls
 {
@@ -72,6 +74,7 @@ namespace NationalInstruments.VeriStand.CustomControls
                 using (context.AddGroup(WatchdogCommands.TargetConfigurationGroupCommand))
                 {
                     context.Add(WatchdogCommands.TargetCommand, new TextBoxFactory());
+                    context.Add(WatchdogCommands.PortCommand, new TextBoxFactory());
                 }
             }
         }
@@ -88,6 +91,11 @@ namespace NationalInstruments.VeriStand.CustomControls
             {
                 LabelTitle = "Target Address",
                 UniqueId = "NI.WatchdogCommands:TargetCommand"
+            };
+            public static readonly ICommandEx PortCommand = new PropertySymbolCommand(WatchdogControlModel.PortSymbol, UIModelPropertySymbolDataModel.GetCreator())
+            {
+                LabelTitle = "Port",
+                UniqueId = "NI.WatchdogCommands:PortCommand"
             };
         }
 

@@ -12,6 +12,7 @@ using System.Threading;
 using System.ComponentModel;
 using System.Net.Sockets;
 using NationalInstruments.DynamicProperties;
+using NationalInstruments.DataTypes;
 
 namespace NationalInstruments.VeriStand.CustomControls
 {
@@ -110,6 +111,8 @@ namespace NationalInstruments.VeriStand.CustomControls
             {
                 case "Target":
                     return typeof(string);
+                case "Port":
+                    return typeof(int);
                 default:
                     return base.GetPropertyType(identifier);
             }
@@ -126,6 +129,8 @@ namespace NationalInstruments.VeriStand.CustomControls
             {
                 case "Target":
                     return "localhost";
+                case "Port":
+                    return 54324;
                 default:
                     return base.DefaultValue(identifier);
             }
@@ -134,8 +139,11 @@ namespace NationalInstruments.VeriStand.CustomControls
         public static readonly PropertySymbol TargetSymbol =
             ExposePropertySymbol<WatchdogControlModel>("Target", (string)"localhost");
 
+        public static readonly PropertySymbol PortSymbol =
+            ExposePropertySymbol<WatchdogControlModel>("Port", (int)54324);
+
         /// <summary>
-        /// Gets or sets the path to the VeriStand channel associated with this control models frequency
+        /// Gets or sets the target address that the watchdog emits the packets to
         /// </summary>
         public string Target
         {
@@ -143,6 +151,18 @@ namespace NationalInstruments.VeriStand.CustomControls
             set
             {
                 SetOrReplaceImmediateValue(TargetSymbol, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the port that the watchdog emits the packets to
+        /// </summary>
+        public int Port
+        {
+            get { return ImmediateValueOrDefault<int>(PortSymbol); }
+            set
+            {
+                SetOrReplaceImmediateValue(PortSymbol, (int)value);
             }
         }
 
@@ -226,7 +246,7 @@ namespace NationalInstruments.VeriStand.CustomControls
                 //Application.Current.Dispatcher.Invoke(() => { }, System.Windows.Threading.DispatcherPriority.Render);
 
                 // Transmit UDP packet
-                TransmitUdpPacket(Target, 54324, DateTime.Now.ToString());
+                TransmitUdpPacket(Target, Port, DateTime.Now.ToString());
                 TryAlarms();
                 // Sleep for 500ms
                 Thread.Sleep(500);
