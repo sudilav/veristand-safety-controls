@@ -35,7 +35,7 @@ C:\Users\Public\Documents\National Instruments\NI VeriStand 2024\Custom UI Manag
 
 #### User Documentation
 
-A minimal documentation is [provided here]().
+A minimal documentation is [provided here](https://sudilav.github.io/veristand-safety-controls/).
 
 ** Note: This repository is probably best used with the minimized feature set demonstrated in the [VeriStand Editor Plugin Example](https://github.com/ni/veristand-editor-plugin-examples) to limit your operators from acting on the system with impunity and is used with this repository in real life practice.**
 
